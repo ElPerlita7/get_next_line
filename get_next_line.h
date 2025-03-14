@@ -6,7 +6,7 @@
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 20:05:26 by abferrer          #+#    #+#             */
-/*   Updated: 2025/02/27 19:57:03 by abferrer         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:16:18 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,16 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <fcntl.h>
 
-size_t ft_strlen(const char *s);
-char    *ft_strchr(const char *s, int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+# endif
+
+int     ft_strlen(char *s);
+char    *ft_strchr(char *s, int c);
+char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_strjoin(char *s1, char *s2);
+char    *get_next_line(int fd);
 
 #endif
